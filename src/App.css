@@ -1,0 +1,190 @@
+/* 1. FORCE HIDE SYSTEM CURSOR EVERYWHERE */
+/* This targets everything (*), including items with the .cursor-pointer class */
+* {
+  cursor: none !important;
+}
+
+/* 2. (Optional Safety) Specifically target Tailwind's class just in case */
+.cursor-pointer {
+  cursor: none !important;
+}
+@media (min-width: 1024px) {
+  * {
+    cursor: none !important;
+  }
+}
+/* --- 1. GLOBAL RESET (The Nuclear Option) --- */
+/* This ensures no hidden browser defaults or 'index.css' rules ruin the layout */
+html, body {
+  scroll-behavior: smooth;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  overflow-x: hidden;
+  display: block !important; /* Overrides default flex centering */
+  background-color: black; /* Ensures no white/gray gaps ever show */
+}
+/* KILL THE SYSTEM CURSOR GLOBALLY */
+html, body, a, button, input, textarea, select, [role="button"] {
+  cursor: none !important;
+}
+/* 1. HIDE DEFAULT CURSOR */
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: black;
+
+}
+
+/* --- HIGH VISIBILITY RETICLE --- */
+
+.reticle-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 10000; /* Highest possible layer */
+  transform: translate3d(calc(var(--x) - 50%), calc(var(--y) - 50%), 0);
+  transition: transform 0.1s cubic-bezier(0.17, 0.67, 0.83, 0.67); /* Snappy movement */
+}
+
+/* 1. The Center Dot - Bigger & Brighter */
+.reticle-dot {
+  width: 6px;
+  height: 6px;
+  background-color: white; /* White center pops more */
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 10px rgba(34, 211, 238, 0.8); /* Cyan Glow */
+}
+
+/* 2. The Outer Ring - White with Shadow */
+.reticle-ring {
+  width: 45px;
+  height: 45px;
+  border: 2px dashed rgba(255, 255, 255, 0.6); /* Thicker, White Lines */
+  background-color: rgba(34, 211, 238, 0.05); /* Very faint blue tint inside */
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  /* Constant Rotation */
+  animation: spin 6s linear infinite; 
+  transition: all 0.2s ease-out;
+}
+
+/* --- LOCKED STATE (Hovering Links) --- */
+/* Snaps tight, turns solid Cyan, becomes opaque */
+.reticle-cursor.locked .reticle-ring {
+  width: 30px;
+  height: 30px;
+  border: 2px solid #22d3ee; /* Solid Cyan Border */
+  background-color: rgba(34, 211, 238, 0.2); /* Semi-transparent fill */
+  box-shadow: 0 0 15px rgba(34, 211, 238, 0.5); /* Strong Glow */
+  animation: none; /* Stops spinning */
+  transform: translate(-50%, -50%) rotate(45deg); /* Optional: Rotate to look like a diamond */
+}
+
+@keyframes spin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+/* Keep your Spotlight and other animations below... */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+
+  /* THE NEW LOGIC: */
+  /* 1. White in the center (0.5 opacity), fading to fully transparent */
+  background: radial-gradient(
+    circle 100px at var(--x) var(--y), 
+    rgba(255, 255, 255, 0.3) 30%, 
+    rgba(255, 255, 255, 0.05) 90%
+  );
+
+  /* 2. BLEND MODE: */
+  /* 'overlay' makes dark text darker and bright areas brighter (adds contrast). */
+  /* 'screen' makes everything strictly brighter (like a real light). */
+  mix-blend-mode: screen; 
+}
+
+/* --- 3. ROOT CONTAINER --- */
+#root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0; /* REMOVED padding: 2rem so it touches edges */
+  text-align: center;
+}
+
+/* --- YOUR EXISTING CONTENT STYLES --- */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* --- Twinkling Stars Animation --- */
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.1;
+    transform: scale(0.2) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.5) rotate(45deg);
+  }
+}
+
+.animate-twinkle {
+  animation: twinkle 2s ease-in-out infinite;
+}
+
+
+/* Add delays so they don't all twinkle at once */
+.delay-100 { animation-delay: 0.1s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-700 { animation-delay: 0.7s; }
+.delay-1000 { animation-delay: 1s; }
