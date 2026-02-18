@@ -107,7 +107,7 @@ const [activeVideo, setActiveVideo] = useState(null);
           
           {/* --- LEFT COLUMN: Sidebar (Navigation Only) --- */}
           <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/6 lg:flex-col lg:justify-start lg:py-24">
-            <nav className="nav hidden md:block">
+            <nav className="nav hidden lg:block">
               <h3 className="text-xl font-bold uppercase tracking-widest text-slate-200 mb-8 sticky top-0 backdrop-blur-md py-6 z-10 text-left shadow-lg shadow-slate-950/20 border-b border-slate-800/50">
                 Index
               </h3>
@@ -227,7 +227,7 @@ const [activeVideo, setActiveVideo] = useState(null);
     href="/Arindam_Resume.pdf" /* IMPORTANT: Put 'resume.pdf' in your public/ folder */
     target="_blank" 
     rel="noopener noreferrer"
-    className="flex block md:hidden mt-2 items-center gap-5 rounded-full border border-cyan-500/50 bg-cyan-900/20 px-4 py-2 text-center text-sm font-semibold text-cyan-300 transition-all hover:bg-cyan-500 hover:text-slate-950 hover:shadow-[0_0_15px_rgba(34,211,238,0.4)]"
+    className="flex block lg:hidden mt-2 items-center gap-5 rounded-full border border-cyan-500/50 bg-cyan-900/20 px-4 py-2 text-center text-sm font-semibold text-cyan-300 transition-all hover:bg-cyan-500 hover:text-slate-950 hover:shadow-[0_0_15px_rgba(34,211,238,0.4)]"
     >
     <FileText size={16} />
     <span>Download Resume</span>
