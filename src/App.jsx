@@ -107,7 +107,7 @@ const [activeVideo, setActiveVideo] = useState(null);
           
           {/* --- LEFT COLUMN: Sidebar (Navigation Only) --- */}
           <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/6 lg:flex-col lg:justify-start lg:py-24">
-            <nav className="nav hidden lg:block">
+            <nav className="nav hidden md:block">
               <h3 className="text-xl font-bold uppercase tracking-widest text-slate-200 mb-8 sticky top-0 backdrop-blur-md py-6 z-10 text-left shadow-lg shadow-slate-950/20 border-b border-slate-800/50">
                 Index
               </h3>
@@ -223,8 +223,7 @@ const [activeVideo, setActiveVideo] = useState(null);
             {skill}
         </button>
     ))}
-  
-</div><a 
+  <a 
     href="/Arindam_Resume.pdf" /* IMPORTANT: Put 'resume.pdf' in your public/ folder */
     target="_blank" 
     rel="noopener noreferrer"
@@ -233,6 +232,7 @@ const [activeVideo, setActiveVideo] = useState(null);
     <FileText size={16} />
     <span>Download Resume</span>
   </a>
+</div>
 </div>
 
                     {/* RIGHT SIDE: LARGE IMAGE WITH TWINKLING STARS */}
