@@ -3,6 +3,9 @@
 * {
   cursor: none !important;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 /* 2. (Optional Safety) Specifically target Tailwind's class just in case */
 .cursor-pointer {
