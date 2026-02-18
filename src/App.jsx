@@ -209,7 +209,15 @@ const [activeVideo, setActiveVideo] = useState(null);
         <MapPin size={14} className="text-cyan-400" /> 
         <span>{resumeData.personalInfo.location}</span>
     </div>
-
+<a 
+            href="/Arindam_Resume.pdf" /* IMPORTANT: Put 'resume.pdf' in your public/ folder */
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex block md:hidden mt-20 items-center gap-5 rounded-full border border-cyan-500/50 bg-cyan-900/20 px-4 py-2 text-sm font-semibold text-cyan-300 transition-all hover:bg-cyan-500 hover:text-slate-950 hover:shadow-[0_0_15px_rgba(34,211,238,0.4)]"
+        >
+            <FileText size={16} />
+            <span>Download Resume</span>
+        </a>
     </div>
 
 </div>
