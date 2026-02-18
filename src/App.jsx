@@ -228,7 +228,7 @@ const [activeVideo, setActiveVideo] = useState(null);
     href="/Arindam_Resume.pdf" /* IMPORTANT: Put 'resume.pdf' in your public/ folder */
     target="_blank" 
     rel="noopener noreferrer"
-    className="flex block md:hidden mt-2 items-center gap-5 rounded-full border border-cyan-500/50 bg-cyan-900/20 px-4 py-2 text-sm font-semibold text-cyan-300 transition-all hover:bg-cyan-500 hover:text-slate-950 hover:shadow-[0_0_15px_rgba(34,211,238,0.4)]"
+    className="flex block md:hidden mt-2 items-center gap-5 rounded-full border border-cyan-500/50 bg-cyan-900/20 px-4 py-2 text-center text-sm font-semibold text-cyan-300 transition-all hover:bg-cyan-500 hover:text-slate-950 hover:shadow-[0_0_15px_rgba(34,211,238,0.4)]"
     >
     <FileText size={16} />
     <span>Download Resume</span>
