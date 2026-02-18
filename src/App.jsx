@@ -123,8 +123,7 @@ const [activeVideo, setActiveVideo] = useState(null);
                      </li>
                    ))}
                  </ul>
-            </nav>
-{/* 1. DOWNLOAD RESUME (Highlighted) */}
+              {/* 1. DOWNLOAD RESUME (Highlighted) */}
         <a 
             href="/Arindam_Resume.pdf" /* IMPORTANT: Put 'resume.pdf' in your public/ folder */
             target="_blank" 
@@ -134,6 +133,8 @@ const [activeVideo, setActiveVideo] = useState(null);
             <FileText size={16} />
             <span>Download Resume</span>
         </a>
+            </nav>
+
           </header>
 
           {/* --- RIGHT COLUMN: Main Content --- */}
