@@ -223,7 +223,8 @@ const [activeVideo, setActiveVideo] = useState(null);
             {skill}
         </button>
     ))}
-  <a 
+  
+</div><a 
     href="/Arindam_Resume.pdf" /* IMPORTANT: Put 'resume.pdf' in your public/ folder */
     target="_blank" 
     rel="noopener noreferrer"
@@ -232,7 +233,7 @@ const [activeVideo, setActiveVideo] = useState(null);
     <FileText size={16} />
     <span>Download Resume</span>
   </a>
-</div>                    </div>
+</div>
 
                     {/* RIGHT SIDE: LARGE IMAGE WITH TWINKLING STARS */}
                     <div className="relative group shrink-0 lg:w-1/3">
