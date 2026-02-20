@@ -20,12 +20,11 @@ const SpotlightCard = ({ children, className = "" }) => {
       onMouseLeave={() => setOpacity(0)}
       className={`relative rounded-xl border border-slate-800 bg-slate-900/50 overflow-hidden ${className}`}
     >
-      {/* The Blue Gradient Spotlight */}
       <div
-        className="pointer-events-none absolute -inset-px transition duration-300"
+        className="hidden lg:block pointer-events-none absolute -inset-px transition duration-300"
         style={{
           opacity,
-          background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, rgba(56, 189, 248, 0.15), transparent 40%)`,
+          background: `radial-gradient(300px circle at ${position.x}px ${position.y}px, rgba(56, 189, 248, 0.15), transparent 40%)`,
         }}
       />
       <div className="relative h-full">
