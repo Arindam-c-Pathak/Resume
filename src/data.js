@@ -17,8 +17,8 @@ export const resumeData = {
   ],
   education: [
     {
-        degree: "B. Tech. in Computer Science & Technology",
-        school: "Dr. A.P.J. Abdul Kalam Institute of Technology",
+        degree: "B. Tech. in Computer Science & Engineering",
+        school: "Dr. A.P.J. Abdul Kalam Govt. Institute of Technology. (Campus Institute of VMSBUTU, Dehradun)",
         year: "2022 — 2026",
         location: "Tanakpur, Uttarakhand"
     },
@@ -32,11 +32,19 @@ export const resumeData = {
   ],
   experience: [
     {
-      year: "Dec 2025 — Present",
+      year: "Mar 2026 — Apr 2026",
+      company: "Bluestock Fintech Pvt Ltd",
+      role: "Software Developer Intern",
+      description: "Developed several minor components for different web applications and webpages.",
+	    certificate: "https://www.linkedin.com/in/arindam-chandra-pathak/overlay/Position/2913722760/treasury/?profileId=ACoAAEEXQTABvIaPAttn3WbkwmLmSZTH3I9qqJw&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BQcnqxMcqRleid%2FDPJawcqg%3D%3D",
+      tags: ["Web Components","React.js"]
+    },
+    {
+      year: "Dec 2025 — Feb 2026",
       company: "Yuga Yatra OPC Pvt Ltd",
       role: "Web Developer Intern",
-      description: "Working on projects with a team of developers, gaining experience in a team-based environment while working on real-world projects.",
-	    certificate: "",
+      description: "Worked on projects with a team of developers, gaining experience in a team-based environment while working on real-world projects.",
+	    certificate: "https://www.linkedin.com/in/arindam-chandra-pathak/overlay/Position/2829648755/treasury/?profileId=ACoAAEEXQTABvIaPAttn3WbkwmLmSZTH3I9qqJw&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BQcnqxMcqRleid%2FDPJawcqg%3D%3D",
       tags: ["Web Development", "Team Collaboration"]
     },
     {
@@ -83,6 +91,7 @@ export const resumeData = {
       year: "Jun 2024 — Jul 2024",
       company: "Prasunet Company",
       role: "Web Development Intern",
+      
       description: "Learned about web development and design, created simple web applications like a Tic-Tac-Toe game and a Weather App using HTML, CSS, JavaScript and APIs. \n Gained experience in web development and design, creating simple web applications and learning about the basics of web development.",
 	    certificate: "https://www.linkedin.com/posts/arindam-chandra-pathak_web-development-internship-certificate-activity-7224651064321486850-SZgl?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEEXQTABvIaPAttn3WbkwmLmSZTH3I9qqJw",
       tags: ["HTML", "CSS", "JavaScript"]
@@ -109,16 +118,18 @@ export const resumeData = {
 
  projects: [
     {
-      title: "Scheduler (In Progress)",
-      description: "Group Project made during the final year of B.Tech. A scheduler web application that is used for academic institutions by allowing direct communication between insitute and students. \n I work as one of the Front-end developers for this project.\nFeatures include: \n• User authentication and role-based access control (students, teachers, admins) \n• Schedule creation and management (class schedules, exam timetables) \n• Notifications and reminders for upcoming classes and assignments \n• Calendar integration for easy schedule visualization \n• Responsive design for accessibility on various devices \n• Classified announcements filtered by user data like Year and Branch.",
-      link: "https://github.com/vansh2709/MINOR-PROJECT",
-    	video: "",
+      title: "AttendEase",
+      description: "A simple University Management System project, made in collaboration with my batchmates. Has multiple functions including:- \n•Attendance management \n•Assignment Submissions \n•Direct and Large Scale Alerts and Notifications \n•Leave Management and submissions \n•Substitution classes management \nApplication and website both were deployed and used by my batchmates during our final year",
+      link: "https://github.com/SudoRV/AttendEase",
+      dates: "Feb 2026 — Jun 2026",
+    	video: "https://www.linkedin.com/posts/arindam-chandra-pathak_tired-of-manual-scheduling-and-attendance-activity-7469334850299142144-6KDU?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEEXQTABvIaPAttn3WbkwmLmSZTH3I9qqJw",
       tags: ["Front-end Development", "Web Application Development", "CSS", "JavaScript", "React", "Tailwind CSS"]
     },
     {
       title: "Scribe-VA (Personal Assistant)",
       description: "A voice assistant built using Python that allows users to perform various tasks like searching and setting schedules using voice commands. \nIt DOES NOT rely on any mainstream Generative AI services for these tasks and hence is quick to respond.\n There are many features being developed for this project such as: \n• An internal calendar and scheduling system \n• Weather updates using a weather API  \n• Offline functionality for basic commands and tasks. \n• Interactive User interface for better user experience.",
       link: "https://github.com/Arindam-c-Pathak/Voice-Assistant",
+      dates: "Aug 2024 — Present",
     	video: "https://www.youtube.com/watch?v=4NISZJgJMAA&list=PLurQ6Iw8ulSY9Pdwnfpvmd7hHOer3-yaz&index=2&pp=gAQBiAQBsAgC",
       tags: ["Python", "Automation", "API", "Speech Recognition", "Text-to-Speech", "Web Search", "Scheduling", "Weather Updates"]
     },
@@ -126,6 +137,7 @@ export const resumeData = {
       title: "GitHub Repository Explorer",
       description: "A web application allowing users to search GitHub repositories, bookmark preferences, and take notes. \n Made during internship at Elevate Labs, it uses GitHub API to fetch data and allows users to save their preferences on client side using local storage.",
       link: "https://github.com/Arindam-c-Pathak/Elevated_labs_Project_Repo",
+      dates: "May 5 — Jun 2025",
     	video: "https://www.youtube.com/watch?v=Nt6HV7qB_lU&list=PLurQ6Iw8ulSY9Pdwnfpvmd7hHOer3-yaz&index=3&pp=gAQBiAQBsAgC",
       tags: ["React", "GitHub API", "Web App", "React.js", "API Integration", "CSS", "JavaScript"]
     },

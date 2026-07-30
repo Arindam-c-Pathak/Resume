@@ -134,7 +134,7 @@ function App() {
   return (
     <div className="relative min-h-screen bg-slate-950 text-slate-400 selection:bg-cyan-900 selection:text-cyan-100 font-sans">
       <Header />
-      {/* Visual Effects Layer */}
+      {/* cursor dots and stuff, looks nice but laggy as shit for now*/}
       <div className={`hidden md:block reticle-cursor ${isHovered ? 'locked' : ''}`}>
         <div className="reticle-dot" />
         <div className="reticle-ring" />
@@ -144,7 +144,7 @@ function App() {
       <div className="relative z-10 mx-auto max-w-[95%] px-4">
         <div className="lg:flex lg:justify-between lg:gap-4">
           
-          {/* LEFT: Sidebar */}
+          {/* sidebar yay */}
           <header className="hidden md:block lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/4 lg:flex-col lg:justify-between lg:py-24">
             <div>
               <h2 className="mt-3 text-2xl font-medium text-cyan-400">
@@ -170,16 +170,14 @@ function App() {
                 </ul>
               </nav>
             </div>
-
-            <a href="/Arindam_Resume.pdf" target="_blank" download='Arindam_Resume.pdf' className="flex w-fit items-center gap-3 rounded-full border border-cyan-500/50 bg-cyan-900/20 px-6 py-3 text-sm font-semibold text-cyan-300 hover:bg-cyan-500 hover:text-slate-950 transition-all">
+            <a href="/ArindamResume.pdf" target="_blank" download='Arindam_Resume.pdf' className="flex w-fit items-center gap-3 rounded-full border border-cyan-500/50 bg-cyan-900/20 px-6 py-3 text-sm font-semibold text-cyan-300 hover:bg-cyan-500 hover:text-slate-950 transition-all">
               <FileText size={18} /> Download Resume
             </a>
           </header>
 
-          {/* RIGHT: Main Content */}
           <main className="lg:w-3/4 lg:py-24">
             
-            {/* Profile Section */}
+            {/* profile pictures and the data ig */}
             <section id="profile" className="mb-24 scroll-mt-24">
               <div className="flex flex-col-reverse lg:flex-row gap-12">
                 <div className="flex-1">
@@ -191,7 +189,7 @@ function App() {
                   </h2>
                   <p className="leading-relaxed">{resumeData.personalInfo.bio}</p>
                   
-                  {/* Contact Pills */}
+                  {/* contact buttons that lead to my socials and shit*/}
                   <div className="mt-8 flex flex-wrap gap-3">
                     <ContactLink icon={<Github size={16}/>} label="GitHub" href={resumeData.personalInfo.github} />
                     <ContactLink icon={<Linkedin size={16}/>} label="LinkedIn" href={resumeData.personalInfo.linkedin} />
@@ -199,7 +197,7 @@ function App() {
                     <ContactLink icon={<Phone size={16}/>} label="Phone" href={`tel:${resumeData.personalInfo.phone}`} />
                   </div>
 
-                  {/* Skills */}
+                  {/* list of skills to show off */}
                   <div className="mt-8 flex flex-wrap gap-2">
                     {resumeData.skills.map((skill, i) => (
                       <span key={i} className="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-medium text-cyan-300 border border-cyan-900/50 cursor-pointer hover:bg-cyan-400/20">
@@ -209,7 +207,7 @@ function App() {
                   </div>
                 </div>
 
-                {/* Avatar */}
+                {/* pricture of my face that grows hehehehe */}
                 <div className="relative group shrink-0 mx-auto lg:mx-0">
                   <div className="absolute -inset-8 rounded-full bg-cyan-400/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
                   <img src="/profile.jpeg" alt="Profile" className="relative h-48 w-48 rounded-full border-2 border-slate-800 object-cover group-hover:scale-150 transition-transform duration-300" />
@@ -217,16 +215,16 @@ function App() {
                   <Sparkle delay="delay-500" className="w-4 h-4 -bottom-2 -right-2" />
                 </div>
               </div>
-            <a href="/Arindam_Resume.pdf" target="_blank" download='Arindam_Resume.pdf' className="block md:hidden mt-5 flex w-fit items-center gap-3 rounded-full border border-cyan-500/50 bg-cyan-900/20 px-6 py-3 text-sm font-semibold text-cyan-300 hover:bg-cyan-500 hover:text-slate-950 transition-all">
+            <a href="/ArindamResume.pdf" target="_blank" download='Arindam_Resume.pdf' className="md:hidden mt-5 flex w-fit items-center gap-3 rounded-full border border-cyan-500/50 bg-cyan-900/20 px-6 py-3 text-sm font-semibold text-cyan-300 hover:bg-cyan-500 hover:text-slate-950 transition-all">
               <FileText size={18} /> Download Resume
             </a>
             </section>
 
-            {/* Content Sections */}
+            {/* main contents i think */}
             <DataSection id="experience" title="Experience" data={resumeData.experience} type="work" />
             <DataSection id="education" title="Education" data={resumeData.education} type="edu" />
             
-            {/* Project Section */}
+            {/* projects and stuff */}
             <section id="projects" className="scroll-mt-24">
               <SectionHeader title="Projects" />
               <div className="group/list">
@@ -249,7 +247,7 @@ function App() {
   );
 }
 
-// --- 4. MINI UI COMPONENTS (Internal to App) ---
+// components that are reused here
 
 const ContactLink = ({ icon, label, href }) => (
   <a href={href} target="_blank" rel="noreferrer" className="flex items-center gap-2 rounded-full border border-slate-800 bg-slate-900/50 px-4 py-2 text-sm hover:border-cyan-400 hover:text-cyan-100 transition-all">
@@ -271,6 +269,11 @@ const ProjectCard = ({ project, isActive, onVideoToggle }) => (
       <h3 className="text-xl font-bold text-slate-100 flex items-center gap-2 group-hover:text-cyan-400 transition-colors">
         {project.title}
       </h3>
+      {/* Dates */}
+      <p className="mt-4 text-sm max-w-xl mx-auto text-slate-400 whitespace-pre-line text-center">
+        {project.dates || 'Dates not specified'}
+      </p>
+      
 
       {/* Descriptions */}
       <p className="mt-4 text-sm max-w-xl mx-auto text-slate-400 whitespace-pre-line text-center">
@@ -337,6 +340,7 @@ const DataSection = ({ id, title, data, type }) => (
         <SpotlightCard key={i} className="mb-6 p-8 lg:p-8 hover:!opacity-100 group-hover/list:opacity-50 transition-all">
           <div className=" text-center flex flex-col items-center">
             <span className="text-cyan-400 font-bold text-xl">{type === 'work' ? item.role : item.degree}</span>
+            <span className="text-sm text-slate-500 mt-2">{type === 'work' ? "At" : "From"}</span>
             <span className="text-slate-300 text-lg">{type === 'work' ? item.company : item.school}</span>
             <span className="text-sm text-slate-500 uppercase mt-2">{item.year}</span>
             <span className="text-slate-300 mt-3 mb-3"><p className="mt-4 text-sm max-w-xl mx-auto text-slate-400 whitespace-pre-line text-center">{type === 'work' ? item.description : item.location}</p></span>
